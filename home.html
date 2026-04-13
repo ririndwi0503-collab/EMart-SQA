@@ -2,11 +2,57 @@
 <html>
 <head>
     <title>Home EMart</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            text-align: center;
+            color: white;
+            margin-top: 150px;
+        }
+
+        .box {
+            background: rgba(255,255,255,0.2);
+            padding: 30px;
+            border-radius: 15px;
+            display: inline-block;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: white;
+            color: #007bff;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+    </style>
 </head>
 <body>
 
-<h1>Selamat Datang di EMart 🎉</h1>
-<p>Login berhasil, ini halaman utama!</p>
+<div class="box">
+    <h1>Selamat Datang di EMart 🎉</h1>
+    <p>Login kamu berhasil!</p>
+
+    <button onclick="logout()">Logout</button>
+</div>
+
+<script>
+function logout() {
+    alert("Kamu logout!");
+    window.location.href = "login.html";
+}
+</script>
 
 </body>
 </html>
