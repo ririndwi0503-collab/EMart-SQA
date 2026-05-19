@@ -1,48 +1,231 @@
-Pengertian White Box Testing
+# White Box Testing
 
+## Pengertian White Box Testing
 White Box Testing adalah metode pengujian yang memeriksa dan menganalisis kode program untuk menemukan kesalahan atau kekurangan dalam suatu aplikasi atau perangkat lunak. Metode ini dilakukan dengan memeriksa modul secara detail untuk memastikan sistem berjalan sesuai dengan fungsi yang diharapkan.
 
-White Box Testing merupakan teknik pengujian software yang menggunakan runtutan logika program yang terkait pada source code. Pengujian dilakukan dengan menganalisis proses internal sistem, mulai dari input, proses pengolahan data, hingga menghasilkan output yang diinginkan. Teknik ini membutuhkan pemahaman terhadap source code program dan sering digunakan pada pengujian unit, integrasi, maupun sistem.
+White Box Testing dilakukan dengan melihat struktur internal program, logika, percabangan, perulangan, serta aliran data pada source code. Pengujian ini biasanya dilakukan oleh programmer atau tester yang memahami bahasa pemrograman dan struktur kode aplikasi.
 
-Model White Box Testing
-1. Desk Checking
+## Konsep White Box Testing
+White Box Testing merupakan teknik pengujian software yang menggunakan runtutan logika program yang terkait pada source code. Pengujian dilakukan dengan menganalisis proses internal sistem mulai dari input, proses pengolahan data, hingga menghasilkan output yang diinginkan.
 
+Teknik ini membutuhkan pemahaman terhadap source code program dan sering digunakan pada pengujian unit, integrasi, maupun sistem. White Box Testing membantu memastikan bahwa seluruh logika program berjalan sesuai dengan kebutuhan sistem.
+
+Tujuan White Box Testing:
+- Memeriksa struktur internal program.
+- Mengetahui kesalahan logika program.
+- Menguji setiap jalur program.
+- Memastikan proses input dan output berjalan dengan benar.
+- Mengurangi kemungkinan error pada aplikasi.
+
+# Model White Box Testing
+
+## 1. Desk Checking
 Desk Checking adalah salah satu model pengujian bagi pembuat software yang telah memahami bahasa pemrograman dengan baik. Pengujian ini berfokus pada pemeriksaan logika program serta nilai variabel pada input dan output yang dibutuhkan aplikasi.
 
-2. Code Walkthrough
+Desk Checking dilakukan secara manual tanpa menjalankan program secara langsung. Programmer memeriksa kode program satu per satu untuk menemukan kesalahan logika maupun kesalahan penulisan kode.
 
+Contoh sederhana Desk Checking:
+
+```java
+int a = 10;
+int b = 5;
+int hasil = a + b;
+
+System.out.println(hasil);
+```
+
+Hasil pemeriksaan:
+- Nilai a = 10
+- Nilai b = 5
+- hasil = 15
+
+Output:
+```java
+15
+```
+
+## 2. Code Walkthrough
 Code Walkthrough merupakan teknik review kode secara formal maupun informal yang dilakukan bersama developer dan tim terkait untuk memahami logika kode, mengidentifikasi potensi error, serta meningkatkan kualitas program secara keseluruhan.
 
-3. Formal Inspection
+Pada teknik ini, programmer menjelaskan alur program kepada anggota tim agar kesalahan dapat ditemukan bersama-sama.
 
+Contoh Code Walkthrough:
+
+```java
+int umur = 18;
+
+if (umur >= 17) {
+   System.out.println("Boleh Membuat SIM");
+} else {
+   System.out.println("Belum Boleh Membuat SIM");
+}
+```
+
+Penjelasan:
+- Jika umur lebih besar atau sama dengan 17 maka output:
+  "Boleh Membuat SIM"
+- Jika kurang dari 17 maka output:
+  "Belum Boleh Membuat SIM"
+
+## 3. Formal Inspection
 Formal Inspection adalah teknik pengujian yang berfokus pada pemeriksaan kelengkapan, ketepatan, dan format data yang ditampilkan maupun diterima oleh aplikasi.
 
-4. Control Flow Testing
+Pengujian dilakukan secara terstruktur dengan tujuan memastikan program sesuai dengan standar yang telah ditentukan.
 
+Contoh pemeriksaan data login:
+
+```java
+String username = "admin";
+String password = "12345";
+
+if (username.equals("admin") && password.equals("12345")) {
+   System.out.println("Login Berhasil");
+} else {
+   System.out.println("Login Gagal");
+}
+```
+
+Hasil:
+- Username dan password benar → Login Berhasil
+- Username atau password salah → Login Gagal
+
+## 4. Control Flow Testing
 Control Flow Testing berfokus pada pemeriksaan alur logika program (control flow) untuk memastikan semua jalur eksekusi berjalan dengan benar dan tidak terjadi loop tak terhingga (infinite loop).
 
-5. Data Flow Testing
+Contoh program:
 
+```java
+int nilai = 80;
+
+if (nilai >= 75) {
+   System.out.println("Lulus");
+} else {
+   System.out.println("Tidak Lulus");
+}
+```
+
+Jalur program:
+- Jalur 1 → kondisi TRUE → output "Lulus"
+- Jalur 2 → kondisi FALSE → output "Tidak Lulus"
+
+## 5. Data Flow Testing
 Data Flow Testing merupakan teknik pengujian yang berfokus pada aliran data dalam sistem. Pengujian dilakukan untuk memastikan variabel digunakan dengan benar serta mengidentifikasi kemungkinan error atau perilaku sistem yang tidak sesuai.
 
-6. Basic Path Testing
+Contoh program:
 
+```java
+int harga = 5000;
+int jumlah = 3;
+int total = harga * jumlah;
+
+System.out.println(total);
+```
+
+Penjelasan:
+- harga = 5000
+- jumlah = 3
+- total = 15000
+
+Output:
+```java
+15000
+```
+
+## 6. Basic Path Testing
 Basic Path Testing adalah teknik pengujian yang berfokus pada identifikasi seluruh jalur eksekusi yang mungkin dijalankan dalam program sehingga penguji perlu memahami alur logika aplikasi.
 
-Pada Basic Path Testing digunakan konsep Cyclomatic Complexity untuk mengukur kompleksitas program.
+Teknik ini digunakan untuk memastikan semua kemungkinan jalur program telah diuji.
+
+Contoh kode program:
+
+```java
+int nilai = 80;
+
+if (nilai >= 75) {
+   System.out.println("Lulus");
+} else {
+   System.out.println("Tidak Lulus");
+}
+```
+
+Flow program:
+1. Program dimulai
+2. Input nilai
+3. Cek kondisi nilai >= 75
+4. Jika benar → tampil "Lulus"
+5. Jika salah → tampil "Tidak Lulus"
+6. Program selesai
+
+Jalur pengujian:
+- Path 1 → TRUE
+- Path 2 → FALSE
+
+### Cyclomatic Complexity
+Cyclomatic Complexity digunakan untuk mengukur kompleksitas suatu program.
 
 Rumus Cyclomatic Complexity:
 
-V(G)=E−N+2P
+```java
+V(G) = E - N + 2P
+```
 
 Keterangan:
+- E = Jumlah edge (penghubung)
+- N = Jumlah node
+- P = Jumlah komponen terhubung
 
-E = Jumlah edge (penghubung)
-N = Jumlah node
-P = Jumlah komponen terhubung
+Contoh:
+- Edge = 4
+- Node = 4
+- P = 1
 
-Semakin tinggi nilai Cyclomatic Complexity maka semakin banyak jalur program yang harus diuji.
+Maka:
 
-7. Loop Testing
+```java
+V(G) = 4 - 4 + 2(1)
+V(G) = 2
+```
 
-Loop Testing adalah teknik pengujian yang berfokus pada pemeriksaan dan identifikasi error yang berkaitan dengan proses perulangan (looping) dalam program. Pengujian ini dilakukan untuk memastikan loop berjalan dengan benar dan tidak menyebabkan kesalahan pada sistem.
+Artinya terdapat 2 jalur pengujian yang harus diuji.
+
+## 7. Loop Testing
+Loop Testing adalah teknik pengujian yang berfokus pada pemeriksaan dan identifikasi error yang berkaitan dengan proses perulangan (looping) dalam program.
+
+Pengujian dilakukan untuk memastikan loop berjalan dengan benar dan tidak menyebabkan kesalahan seperti infinite loop.
+
+Contoh program looping:
+
+```java
+for (int i = 1; i <= 5; i++) {
+   System.out.println("Perulangan ke-" + i);
+}
+```
+
+Output:
+
+```java
+Perulangan ke-1
+Perulangan ke-2
+Perulangan ke-3
+Perulangan ke-4
+Perulangan ke-5
+```
+
+## Kelebihan White Box Testing
+- Dapat mengetahui kesalahan logika program secara detail.
+- Membantu meningkatkan kualitas kode program.
+- Memastikan seluruh jalur program berjalan dengan baik.
+- Membantu menemukan bug tersembunyi.
+- Pengujian lebih detail karena melihat source code secara langsung.
+
+## Kekurangan White Box Testing
+- Membutuhkan pemahaman bahasa pemrograman.
+- Proses pengujian memerlukan waktu lebih lama.
+- Pengujian cukup rumit pada program besar.
+- Membutuhkan tester yang memahami struktur internal program.
+- Tidak fokus pada tampilan antarmuka aplikasi.
+
+## Kesimpulan
+White Box Testing merupakan metode pengujian perangkat lunak yang berfokus pada struktur internal dan source code program. Pengujian ini dilakukan untuk memastikan logika program, alur data, percabangan, dan proses perulangan berjalan dengan baik.
+
+Dengan White Box Testing, kesalahan pada kode program dapat ditemukan lebih awal sehingga kualitas perangkat lunak menjadi lebih baik, lebih stabil, dan sesuai dengan kebutuhan pengguna.
